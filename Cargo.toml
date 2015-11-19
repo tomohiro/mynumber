@@ -2,3 +2,13 @@
 name = "mynumber"
 version = "0.1.0"
 authors = ["Tomohiro TAIRA <tomohiro.t@gmail.com>"]
+
+description = "MyNumber validator"
+homepage = "https://github.com/Tomohiro/mynumber"
+repository = "https://github.com/Tomohiro/mynumber"
+
+readme = "README.md"
+license = "MIT"
+license-file = "LICENSE"
+
+include = ["Cargo.toml", "src/*"]

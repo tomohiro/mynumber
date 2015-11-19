@@ -1,7 +1,7 @@
 mynumber
 ================================================================================
 
-My Number validator for Rust
+MyNumber validator for Rust
 
 
 
