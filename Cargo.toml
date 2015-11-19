@@ -1,0 +1,4 @@
+[package]
+name = "mynumber"
+version = "0.1.0"
+authors = ["Tomohiro TAIRA <tomohiro.t@gmail.com>"]
