@@ -12,7 +12,7 @@ Usage
 extern crate mynumber;
 
 fn main() {
-    match validate("012345678908") {
+    match validate("123456789018") {
       Ok(()) => println!("valid"),
       Err(e) => println!("invalid: {:?}", e),
     }
