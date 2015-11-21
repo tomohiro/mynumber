@@ -1,8 +1,10 @@
 mynumber
 ================================================================================
 
-MyNumber validator for Rust
+[![Build Status](https://img.shields.io/travis/Tomohiro/mynumber.svg?style=flat-square)](https://travis-ci.org/Tomohiro/mynumber)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/Tomohiro/mynumber/blob/master/LICENSE)
 
+MyNumber validator for Rust
 
 
 Usage
