@@ -9,6 +9,5 @@ repository = "https://github.com/Tomohiro/mynumber"
 
 readme = "README.md"
 license = "MIT"
-license-file = "LICENSE"
 
 include = ["Cargo.toml", "src/*"]
