@@ -1,0 +1,19 @@
+environment:
+  RUST_INSTALL_DIR: C:\Rust
+  RUST_INSTALL_TRIPLE: x86_64-pc-windows-msvc
+  RUST_VERSION: 1.4.0
+
+platform:
+  - x64
+
+install:
+  - ps: Start-FileDownload "https://static.rust-lang.org/dist/rust-${env:RUST_VERSION}-${env:RUST_INSTALL_TRIPLE}.exe"
+  - cmd: rust-%RUST_VERSION%-%RUST_INSTALL_TRIPLE%.exe /VERYSILENT /NORESTART /DIR="%RUST_INSTALL_DIR%"
+  - cmd: SET PATH=%PATH%;%RUST_INSTALL_DIR%\bin
+  - rustc --version
+  - cargo --version
+
+build: false
+test_script:
+  - cargo build
+  - cargo test
