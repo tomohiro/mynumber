@@ -1,3 +1,16 @@
+//! A crate for validate MyNumber.
+//!
+//! # Example
+//!
+//! ```
+//! extern crate mynumber;
+//!
+//! match mynumber::validate("123456789018") {
+//!     Ok(()) => println!("valid"),
+//!     Err(e) => println!("invalid: {:?}", e),
+//! }
+//! ```
+
 #[derive(Debug)]
 pub enum ValidateError {
     InvalidMyNumberLength,
@@ -5,6 +18,7 @@ pub enum ValidateError {
     InvalidCheckDigit
 }
 
+/// Validates the mynumber.
 pub fn validate(mynumber: &str) -> Result<(), ValidateError> {
     if mynumber.len() != 12 {
         return Err(ValidateError::InvalidMyNumberLength);
