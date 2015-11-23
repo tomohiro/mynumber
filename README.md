@@ -3,6 +3,7 @@ mynumber
 
 [![Build Status](https://travis-ci.org/Tomohiro/mynumber.svg)](https://travis-ci.org/Tomohiro/mynumber)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/Tomohiro/mynumber?svg=true)](https://ci.appveyor.com/project/Tomohiro/mynumber)
+[![Coverage Status](https://coveralls.io/repos/Tomohiro/mynumber/badge.svg)](https://coveralls.io/github/Tomohiro/mynumber)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Tomohiro/mynumber/blob/master/LICENSE)
 
 MyNumber validator for Rust
