@@ -1,6 +1,14 @@
 sudo: false
 language: rust
 
+# Necessary for `travis-cargo coveralls --no-sudo`
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+
 rust:
   - stable
   - nightly
@@ -10,6 +18,18 @@ os:
   - linux
   - osx
 
+# Enable travis-cargo: https://github.com/huonw/travis-cargo
+before_script:
+  - |
+    pip install 'travis-cargo<0.2' --user &&
+    export PATH=$HOME/.local/bin:$PATH
+
 script:
   - cargo build --verbose
   - cargo test --verbose
+
+after_success:
+  # Measure code coverage and upload to coveralls.io
+  - if [ $TRAVIS_OS_NAME = 'linux' ]; then
+      travis-cargo --only stable coveralls --no-sudo;
+    fi
