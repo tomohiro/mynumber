@@ -16,7 +16,7 @@ Usage
 extern crate mynumber;
 
 fn main() {
-    match mynumber::validate("123456789018") {
+    match mynumber::verify("123456789018") {
       Ok(()) => println!("valid"),
       Err(e) => println!("invalid: {:?}", e),
     }
