@@ -1,29 +1,29 @@
+//! A module to verify individual number
+
+/// Size of individual number.
 const INDIVIDUAL_NUMBER_DIGITS: usize = 12;
 
 /// Verifies the individual number.
 pub fn verify(number: &str) -> Result<(), ::VerifyError> {
-    if number.len() != INDIVIDUAL_NUMBER_DIGITS {
+    let mut digits = number.chars().filter_map(|x|
+        if x.is_numeric() {
+            x.to_digit(10)
+        } else {
+            None
+        }
+    ).collect::<Vec<u32>>();
+
+    if digits.len() != INDIVIDUAL_NUMBER_DIGITS {
         return Err(::VerifyError::InvalidNumberLength);
     }
 
-    let mut numbers = number.chars().collect::<Vec<char>>();
-    let check_digit = if numbers.last().unwrap().is_numeric() {
-        numbers.pop().unwrap().to_digit(10).unwrap()
-    } else {
-        return Err(::VerifyError::InvalidType)
-    };
-
-
+    let check_digit = digits.pop().unwrap();
     let mut pq = 0;
-    for (i, v) in numbers.iter().rev().enumerate() {
-        if !v.is_numeric() {
-            return Err(::VerifyError::InvalidType)
-        }
+    for (i, p) in digits.iter().rev().enumerate() {
         let n = i + 1;
-        let p = v.to_digit(10).unwrap();
         let q = if n <= 6 { n + 1 } else { n - 5 } as u32;
         pq += p * q;
-    };
+    }
 
     let remainder = pq % 11;
     let calc_digit = match remainder {
