@@ -19,6 +19,7 @@ pub enum VerifyError {
 }
 
 pub mod individual;
+pub mod corporate;
 
 pub fn verify(mynumber: &str) -> Result<(), VerifyError> {
     individual::verify(mynumber)
