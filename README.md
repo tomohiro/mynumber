@@ -9,8 +9,21 @@ mynumber
 MyNumber validator for Rust
 
 
+Installation
+--------------------------------------------------------------------------------
+
+Put this in your `Cargo.toml`:
+
+```toml
+[dependencies]
+mynumber = "0.1"
+```
+
+
 Usage
 --------------------------------------------------------------------------------
+
+Put this in your crate root:
 
 ```rust
 extern crate mynumber;
