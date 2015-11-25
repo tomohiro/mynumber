@@ -14,7 +14,6 @@
 #[derive(Debug)]
 pub enum VerifyError {
     InvalidNumberLength,
-    InvalidType,
     InvalidCheckDigit
 }
 
