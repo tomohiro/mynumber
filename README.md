@@ -6,7 +6,7 @@ mynumber
 [![Coverage Status](https://coveralls.io/repos/Tomohiro/mynumber/badge.svg)](https://coveralls.io/github/Tomohiro/mynumber)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Tomohiro/mynumber/blob/master/LICENSE)
 
-MyNumber validator for Rust
+My Number validator for Rust
 
 
 Installation
@@ -30,6 +30,37 @@ extern crate mynumber;
 
 fn main() {
     match mynumber::verify("123456789018") {
+      Ok(()) => println!("valid"),
+      Err(e) => println!("invalid: {:?}", e),
+    }
+}
+```
+
+### Verifying an Individual Number a.k.a My Number
+
+```rust
+extern crate mynumber;
+
+use mynumber::individual;
+
+fn main() {
+    match individual::verify("123456789018") {
+      Ok(()) => println!("valid"),
+      Err(e) => println!("invalid: {:?}", e),
+    }
+}
+```
+
+
+### Verifying a Corporate Number
+
+```rust
+extern crate mynumber;
+
+use mynumber::corporate;
+
+fn main() {
+    match corporate::verify("9234567890123") {
       Ok(()) => println!("valid"),
       Err(e) => println!("invalid: {:?}", e),
     }
