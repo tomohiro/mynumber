@@ -14,7 +14,7 @@
 #[derive(Debug)]
 pub enum VerifyError {
     InvalidNumberLength,
-    InvalidCheckDigit
+    InvalidCheckDigit,
 }
 
 pub mod individual;
