@@ -68,6 +68,12 @@ fn main() {
 ```
 
 
+Contributing
+--------------------------------------------------------------------------------
+
+Please check out the [CONTIRBUTING](CONTRIBUTING.md) guideline.
+
+
 Acknowledgements
 --------------------------------------------------------------------------------
 
