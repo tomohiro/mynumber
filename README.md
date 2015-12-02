@@ -1,6 +1,7 @@
 mynumber
 ================================================================================
 
+[![Crate Version](https://img.shields.io/crates/v/mynumber.svg?style=flat-square)](https://crates.io/crates/mynumber)
 [![Build Status](https://img.shields.io/travis/Tomohiro/mynumber.svg?style=flat-square)](https://travis-ci.org/Tomohiro/mynumber)
 [![Build Status](https://img.shields.io/appveyor/ci/Tomohiro/mynumber.svg?label=windows%20build&style=flat-square)](https://ci.appveyor.com/project/Tomohiro/mynumber)
 [![Coverage Status](https://img.shields.io/coveralls/Tomohiro/mynumber.svg?style=flat-square)](https://coveralls.io/github/Tomohiro/mynumber)
