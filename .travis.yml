@@ -26,12 +26,14 @@ before_script: |
 script:
   - cargo build --verbose
   - cargo test --verbose
-  - [ $TRAVIS_OS_NAME = 'linux' ] && travis-cargo --only stable doc
+  - cargo doc --verbose
 
+# Measure code coverage and upload to coveralls.io.
+# And generate documents and push to GitHub pages
 after_success: |
-  # Measure code coverage and upload to coveralls.io
   [ $TRAVIS_OS_NAME = 'linux' ] &&
-  travis-cargo --only stable coveralls --no-sudo
+  travis-cargo --only stable coveralls --no-sudo --verify &&
+  travis-cargo --only stable doc-upload
 
 env:
   global:
