@@ -26,7 +26,7 @@ before_script: |
 script:
   - cargo build --verbose
   - cargo test --verbose
-  - travis-cargo --only stable doc
+  - [ $TRAVIS_OS_NAME = 'linux' ] && travis-cargo --only stable doc
 
 after_success: |
   [ $TRAVIS_OS_NAME = 'linux' ] &&
