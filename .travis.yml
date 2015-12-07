@@ -19,17 +19,16 @@ os:
   - osx
 
 # Enable travis-cargo: https://github.com/huonw/travis-cargo
-before_script:
-  - |
+before_script: |
     pip install 'travis-cargo<0.2' --user &&
     export PATH=$HOME/.local/bin:$PATH
 
 script:
   - cargo build --verbose
   - cargo test --verbose
+  - travis-cargo --only stable doc
 
-after_success:
+after_success: |
+  [ $TRAVIS_OS_NAME = 'linux' ] &&
   # Measure code coverage and upload to coveralls.io
-  - if [ $TRAVIS_OS_NAME = 'linux' ]; then
-      travis-cargo --only stable coveralls --no-sudo;
-    fi
+  travis-cargo --only stable coveralls --no-sudo
