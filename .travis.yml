@@ -29,6 +29,10 @@ script:
   - [ $TRAVIS_OS_NAME = 'linux' ] && travis-cargo --only stable doc
 
 after_success: |
-  [ $TRAVIS_OS_NAME = 'linux' ] &&
   # Measure code coverage and upload to coveralls.io
+  [ $TRAVIS_OS_NAME = 'linux' ] &&
   travis-cargo --only stable coveralls --no-sudo
+
+env:
+  global:
+    secure: "fIG3oJr6953tIOVpkbpH6w1u7y1I94j15iFVSNko1VC8a/S10a5KqCbg3t8U3kxMmNqrITUMGI83/9Z/gpsjw+9sYGKSJF12oNkMgD58Z2LKYcoozGbcY7Y+SeZRBMotxVxihA5n74/5PvOKaACj7rKy1rSXxoLQSwOclfrPGleoVgXl4A+px1UDTyLPf1Ym+SC7d2ZtY3hpH2MylfRUfjtBhhnTr7kHnIzTK0pRxBIIhmIWyE0CXa1JJ5D3xTAPlSMJo5dUyTFJ+74ZAtUzk9FFAxc7O186b8LkvaiZ8tCGmecvI8tGZpnbeT1hh0n4P6CGPz9tEZa2yGSWECPue8BY2zY98MfFJ1JuAK4lmvTuEvJ1LpLrqFCrAFC8T1YyfFzFYYJAEa0YjjgBE1zCUYkpeejUEID2CZ1nMPZrmevFv7YBHvEcvVUBnji+/Kg8FaPFp4+Z2eMjccf6uWFJzTKUSIv1DXCmqc+Pxp4v2n80eH4Pf4TqP3YD7bHXPlTxVi7dcvtujFlhphe++lkWL3LuYHltRARZ5wZG8MDuO7n3jyLCzVEbbK6zNTBinV+MYawU1i69ddAj9q9tOW7gwrakM47VxyxovsjkoASCHmdhhFcHFKkwp/KyCpUa45BZ9w/JyINe8o6LY/zw/fGi+046JpJQW1jNhygnsx9Vs0g="
