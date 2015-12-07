@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["VerifyError",""]],"fn":[["verify",""]],"mod":[["corporate","A module to verify corporate number"],["individual","A module to verify individual number"]]});
